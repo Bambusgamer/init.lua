@@ -55,7 +55,7 @@ return require('packer').startup(function(use)
         "nvim-lua/plenary.nvim"
       }
   })
-  use("mini.align")
+  use("echasnovski/mini.align")
 
   use {
   'VonHeikemen/lsp-zero.nvim',

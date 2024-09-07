@@ -13,6 +13,7 @@ require("mason").setup({})
 require("mason-lspconfig").setup({
 	ensure_installed = {
 		"tsserver",
+        -- "ts_ls",
 		"eslint",
 		"lua_ls",
 		"rust_analyzer"
@@ -20,7 +21,16 @@ require("mason-lspconfig").setup({
 	handlers = {
 		function(server_name)
 			require("lspconfig")[server_name].setup({})
-		end
+		end,
+		["tsserver"] = function()
+			require("lspconfig").ts_ls.setup({
+				settings = {
+					completions = {
+						completeFunctionCalls = true,
+					},
+				},
+			})
+		end,
 	}
 })
 

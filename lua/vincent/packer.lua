@@ -56,6 +56,7 @@ return require('packer').startup(function(use)
       }
   })
   use("echasnovski/mini.align")
+  use {'kevinhwang91/nvim-ufo', requires = 'kevinhwang91/promise-async'}
 
   use {
   'VonHeikemen/lsp-zero.nvim',
